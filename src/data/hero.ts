@@ -1,5 +1,5 @@
 export const heroDetails = {
-    heading: 'Smart, Secure, Simple Financial Management',
-    subheading: 'From effortless budgeting to real-time investment insights, Finwise puts you in control of your money like never before',
+    heading: 'Need advice on your savings and investments?',
+    subheading: 'We are here to help you with tax, real estate, and financial planning',
     centerImageSrc: '/images/hero-mockup.webp',
 }

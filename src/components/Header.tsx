@@ -23,24 +23,36 @@ const Header: React.FC = () => {
                 <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-2 px-5 md:py-10">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
-                        <FaFingerprint className="text-foreground min-w-fit w-7 h-7" />
+                        <img 
+                            src="/images/logo2.png" 
+                            alt={`${siteDetails.siteName} Logo`}
+                            width={100}
+                            height={100}
+                            className="w-auto h-12 pr-5" // This ensures proper scaling while maintaining aspect ratio
+                        />
                         <span className="manrope text-xl font-semibold text-foreground cursor-pointer">
                             {siteDetails.siteName}
                         </span>
                     </Link>
 
                     {/* Desktop Menu */}
-                    <ul className="hidden md:flex space-x-6">
+                    <ul className="hidden md:flex items-center space-x-8">
                         {menuItems.map(item => (
                             <li key={item.text}>
-                                <Link href={item.url} className="text-foreground hover:text-foreground-accent transition-colors">
+                                <Link 
+                                    href={item.url} 
+                                    className="text-foreground hover:text-foreground-accent transition-colors text-base font-medium"
+                                >
                                     {item.text}
                                 </Link>
                             </li>
                         ))}
                         <li>
-                            <Link href="#cta" className="text-black bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors">
-                                Download
+                            <Link 
+                                href="/contact" 
+                                className="text-black bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors font-medium"
+                            >
+                                Contact
                             </Link>
                         </li>
                     </ul>
@@ -79,14 +91,22 @@ const Header: React.FC = () => {
                     <ul className="flex flex-col space-y-4 pt-1 pb-6 px-6">
                         {menuItems.map(item => (
                             <li key={item.text}>
-                                <Link href={item.url} className="text-foreground hover:text-primary block" onClick={toggleMenu}>
+                                <Link 
+                                    href={item.url} 
+                                    className="text-foreground hover:text-primary block py-2 text-base font-medium" 
+                                    onClick={toggleMenu}
+                                >
                                     {item.text}
                                 </Link>
                             </li>
                         ))}
                         <li>
-                            <Link href="#cta" className="text-black bg-primary hover:bg-primary-accent px-5 py-2 rounded-full block w-fit" onClick={toggleMenu}>
-                                Get Started
+                            <Link 
+                                href="/contact" 
+                                className="text-black bg-primary hover:bg-primary-accent px-6 py-3 rounded-full block w-fit font-medium" 
+                                onClick={toggleMenu}
+                            >
+                                Contact
                             </Link>
                         </li>
                     </ul>

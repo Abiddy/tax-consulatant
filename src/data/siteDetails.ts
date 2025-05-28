@@ -1,8 +1,8 @@
 export const siteDetails = {
-    siteName: 'Finwise',
-    siteUrl: 'https://finwise-omega.vercel.app/',
+    siteName: 'Guardian Tax & Realty',
+    siteUrl: 'https://guardiantaxandrealty.com/',
     metadata: {
-        title: 'Finwise - Next.js and Tailwind CSS Landing Page Template',
+        title: 'Gaurdian Tax - Next.js and Tailwind CSS Landing Page Template',
         description: 'Finwise empowers businesses with cutting-edge technology solutions to drive success and efficiency.',
     },
     language: 'en-us',

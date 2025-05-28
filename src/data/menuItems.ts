@@ -2,15 +2,19 @@ import { IMenuItem } from "@/types";
 
 export const menuItems: IMenuItem[] = [
     {
-        text: "Features",
-        url: "#features"
+        text: 'Tax Services',
+        url: '/tax-services'
     },
     {
-        text: "Pricing",
-        url: "#pricing"
+        text: 'Real Estate Planning',
+        url: '/real-estate-planning'
     },
     {
-        text: "Testimonials",
-        url: "#testimonials"
+        text: 'About Us',
+        url: '/about'
+    },
+    {
+        text: 'Testimonials',
+        url: '/testimonials'
     }
 ];
