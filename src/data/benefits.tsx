@@ -23,7 +23,7 @@ export const benefits: IBenefit[] = [
                 icon: <FiDollarSign size={26} />
             }
         ],
-        imageSrc: "/images/tax-services.webp"
+        imageSrc: "/images/img1.webp"
     },
     {
         title: "IRS & Audit Representation",
@@ -45,7 +45,7 @@ export const benefits: IBenefit[] = [
                 icon: <IoDocumentText size={26} />
             }
         ],
-        imageSrc: "/images/irs-representation.webp"
+        imageSrc: "/images/img4.jpeg"
     },
     {
         title: "Specialized Tax Services",

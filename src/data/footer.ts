@@ -7,27 +7,31 @@ export const footerDetails: {
     telephone: string;
     socials: ISocials;
 } = {
-    subheading: "Empowering businesses with cutting-edge financial technology solutions.",
+    subheading: "Professional tax and real estate services to help you achieve your financial goals.",
     quickLinks: [
         {
-            text: "Features",
-            url: "#features"
+            text: "Tax Services",
+            url: "/tax-services"
         },
         {
-            text: "Pricing",
-            url: "#pricing"
+            text: "Real Estate Planning",
+            url: "/real-estate-planning"
         },
         {
-            text: "Testimonials",
-            url: "#testimonials"
+            text: "About Us",
+            url: "/about"
+        },
+        {
+            text: "Contact",
+            url: "/contact"
         }
     ],
-    email: 'address@yoursite.com',
-    telephone: '+1 (123) 456-7890',
+    email: 'info@guardiantaxrealty.com',
+    telephone: '1-888-547-1110',
     socials: {
         // github: 'https://github.com',
         // x: 'https://twitter.com/x',
-        twitter: 'https://twitter.com/Twitter',
+        // twitter: 'https://twitter.com/Twitter',
         facebook: 'https://facebook.com',
         // youtube: 'https://youtube.com',
         linkedin: 'https://www.linkedin.com',

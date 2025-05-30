@@ -60,9 +60,8 @@ const BenefitSection: React.FC<Props> = ({ benefit, imageAtRight }: Props) => {
             >
                 <div
                     className={clsx("flex flex-wrap items-center w-full max-w-lg", { "justify-start": imageAtRight, "lg:order-1 justify-end": !imageAtRight })}
-                    
                 >
-                    <div className="w-full  text-center lg:text-left ">
+                    <div className="w-full text-center lg:text-left">
                         <motion.div
                             className="flex flex-col w-full"
                             variants={childVariants}
@@ -86,9 +85,18 @@ const BenefitSection: React.FC<Props> = ({ benefit, imageAtRight }: Props) => {
                     </div>
                 </div>
 
-                <div className={clsx("mt-5 lg:mt-0", { "lg:order-2": imageAtRight })}>
-                    <div className={clsx("w-fit flex", { "justify-start": imageAtRight, "justify-end": !imageAtRight })}>
-                        <Image src={imageSrc} alt="title" width="384" height="762" quality={100} className="lg:ml-0" />
+                <div className={clsx("mt-5 lg:mt-0 w-full max-w-sm", { "lg:order-2": imageAtRight })}>
+                    <div className={clsx("w-full flex", { "justify-start": imageAtRight, "justify-end": !imageAtRight })}>
+                        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                            <Image 
+                                src={imageSrc} 
+                                alt={title}
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 100vw, 400px"
+                                quality={100}
+                            />
+                        </div>
                     </div>
                 </div>
             </motion.div>
