@@ -26,7 +26,7 @@ export const footerDetails: {
             url: "/contact"
         }
     ],
-    email: 'info@guardiantaxrealty.com',
+    email: 'jake@guardiantaxresolution.com',
     telephone: '1-888-547-1110',
     socials: {
         // github: 'https://github.com',

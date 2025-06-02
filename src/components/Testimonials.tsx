@@ -1,29 +1,64 @@
 'use client';
 import React from 'react';
-import { FiUser } from 'react-icons/fi';
+import { motion } from 'framer-motion';
 import { testimonials } from '@/data/testimonials';
+import { FiUser } from 'react-icons/fi';
 
-const Testimonials: React.FC = () => {
+const Testimonials = () => {
     return (
-        <div className="grid gap-14 max-w-lg w-full mx-auto lg:gap-8 lg:grid-cols-3 lg:max-w-full">
-            {testimonials.map((testimonial, index) => (
-                <div
-                    key={index}
-                    className=""
-                >
-                    <div className="flex items-center mb-4 w-full justify-center lg:justify-start">
-                        <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center shadow-sm">
-                            <FiUser className="w-6 h-6 text-green-600" />
-                        </div>
-                        <div className="ml-4">
-                            <h3 className="text-lg font-semibold text-secondary">{testimonial.name}</h3>
-                            <p className="text-sm text-foreground-accent">{testimonial.role}</p>
-                        </div>
-                    </div>
-                    <p className="text-foreground-accent text-center lg:text-left">&quot;{testimonial.message}&quot;</p>
+        <section className="py-20 sm:py-32 overflow-hidden">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                {/* Section Header */}
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                        What Our Clients Say
+                    </h2>
+                    <p className="text-xl text-gray-600">
+                        Hear from those who have partnered with us.
+                    </p>
                 </div>
-            ))}
-        </div>
+
+                {/* Testimonials Scroll Container */}
+                <div className="relative">
+                    {/* Gradient Overlays */}
+                    <div className="absolute left-0 top-0 bottom-0 w-32 z-10"></div>
+                    <div className="absolute right-0 top-0 bottom-0 w-32 z-10"></div>
+
+                    {/* Scrolling Container */}
+                    <div className="flex overflow-x-auto gap-6 pb-8 -mx-4 px-4 snap-x snap-mandatory scrollbar-hide">
+                        {testimonials.map((testimonial, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className="flex-none w-[calc(100%-2rem)] sm:w-[400px] snap-center"
+                            >
+                                <div className="h-full bg-gray-900 text-white rounded-3xl p-8 flex flex-col">
+                                    {/* Avatar and Info */}
+                                    <div className="flex items-center gap-4 mb-6">
+                                        <div className="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center">
+                                            <FiUser className="w-6 h-6 text-green-500" />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-semibold text-lg">{testimonial.name}</h4>
+                                            <p className="text-gray-400">{testimonial.role}</p>
+                                        </div>
+                                    </div>
+
+                                    {/* Quote */}
+                                    <blockquote className="flex-grow">
+                                        <p className="text-gray-300 leading-relaxed">
+                                            {testimonial.message}
+                                        </p>
+                                    </blockquote>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </section>
     );
 };
 

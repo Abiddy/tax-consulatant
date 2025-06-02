@@ -3,8 +3,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { Transition } from '@headlessui/react';
-import { HiOutlineXMark, HiBars3 } from 'react-icons/hi2';
-import { FiPhone } from 'react-icons/fi';
+import { HiOutlineXMark, HiBars3, HiChevronDown } from 'react-icons/hi2';
 
 import Container from './Container';
 import { siteDetails } from '@/data/siteDetails';
@@ -18,9 +17,9 @@ const Header: React.FC = () => {
     };
 
     return (
-        <header className="bg-transparent fixed top-0 left-0 right-0 md:absolute z-50 w-full">
+        <header className="bg-white fixed top-0 left-0 right-0 z-50 w-full border-b border-gray-100">
             <Container className="!px-0">
-                <nav className="shadow-md md:shadow-none bg-white md:bg-transparent flex justify-between items-center py-2 px-4 md:px-5 md:py-10">
+                <nav className="flex justify-between items-center py-4 px-4 md:px-8">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 min-w-0">
                         <img 
@@ -28,50 +27,46 @@ const Header: React.FC = () => {
                             alt={`${siteDetails.siteName} Logo`}
                             width={100}
                             height={100}
-                            className="w-auto h-6 md:h-12 pr-2 md:pr-5" // Smaller height on mobile, larger on desktop
+                            className="w-auto h-8 md:h-10" 
                         />
-                        <span className="manrope text-lg md:text-xl font-semibold text-foreground cursor-pointer truncate">
+                        <span className=" text-xl md:text-xs font-bold text-gray-900">
                             {siteDetails.siteName}
                         </span>
                     </Link>
 
                     {/* Desktop Menu */}
-                    <ul className="hidden md:flex items-center space-x-8">
-                        {menuItems.map(item => (
-                            <li key={item.text}>
-                                <Link 
-                                    href={item.url} 
-                                    className="text-foreground hover:text-foreground-accent transition-colors text-base font-medium"
-                                >
-                                    {item.text}
-                                </Link>
-                            </li>
-                        ))}
-                        <li>
-                            <a 
-                                href="tel:1-888-547-1110" 
-                                className="flex items-center text-foreground hover:text-foreground-accent transition-colors text-base font-medium whitespace-nowrap"
-                            >
-                                <FiPhone className="mr-2" />
-                                1-888-547-1110
-                            </a>
-                        </li>
-                        <li>
+                    <div className="hidden lg:flex items-center gap-8">
+                        <div className="flex items-center gap-6">
+                            {menuItems.map(item => (
+                                <div key={item.text} className="relative group">
+                                    <Link 
+                                        href={item.url} 
+                                        className="flex items-center gap-1 py-2 text-gray-600 hover:text-gray-900 transition-colors text-base font-medium"
+                                    >
+                                        {item.text}
+                                        <HiChevronDown className="w-4 h-4" />
+                                    </Link>
+                                </div>
+                            ))}
+                        </div>
+                      
+                        
+                        <div className="flex items-center gap-4">
                             <Link 
-                                href="/contact" 
-                                className="text-black bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors font-medium whitespace-nowrap"
+                                href="/#contact" 
+                                className="text-white bg-black hover:bg-gray-800 px-6 py-2 rounded-full transition-colors font-medium text-sm"
                             >
-                                Contact
+                                Contact Us
                             </Link>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="md:hidden flex items-center">
+                    <div className="lg:hidden">
                         <button
                             onClick={toggleMenu}
                             type="button"
-                            className="bg-primary text-black focus:outline-none rounded-full w-10 h-10 flex items-center justify-center"
+                            className="text-gray-600 hover:text-gray-900 focus:outline-none"
                             aria-controls="mobile-menu"
                             aria-expanded={isOpen}
                         >
@@ -90,45 +85,36 @@ const Header: React.FC = () => {
             <Transition
                 show={isOpen}
                 enter="transition ease-out duration-200 transform"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="transition ease-in duration-75 transform"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
+                enterFrom="opacity-0 -translate-y-2"
+                enterTo="opacity-100 translate-y-0"
+                leave="transition ease-in duration-150 transform"
+                leaveFrom="opacity-100 translate-y-0"
+                leaveTo="opacity-0 -translate-y-2"
             >
-                <div id="mobile-menu" className="md:hidden bg-white w-full">
-                    <ul className="flex flex-col space-y-4 pt-1 pb-6 px-4">
+                <div className="lg:hidden bg-white border-t border-gray-100">
+                    <div className="px-4 py-6 space-y-6">
                         {menuItems.map(item => (
-                            <li key={item.text}>
+                            <div key={item.text}>
                                 <Link 
                                     href={item.url} 
-                                    className="text-foreground hover:text-primary block py-2 text-base font-medium" 
+                                    className="flex items-center justify-between py-2 text-base font-medium text-gray-600 hover:text-gray-900" 
                                     onClick={toggleMenu}
                                 >
                                     {item.text}
+                                    <HiChevronDown className="w-4 h-4" />
                                 </Link>
-                            </li>
+                            </div>
                         ))}
-                        <li>
-                            <a 
-                                href="tel:1-888-547-1110" 
-                                className="flex items-center text-foreground hover:text-primary py-2 text-base font-medium"
-                                onClick={toggleMenu}
-                            >
-                                <FiPhone className="mr-2" />
-                                1-888-547-1110
-                            </a>
-                        </li>
-                        <li>
+                        <div className="pt-4 space-y-4">
                             <Link 
                                 href="/#contact" 
-                                className="text-black bg-primary hover:bg-primary-accent px-6 py-3 rounded-full inline-block font-medium" 
+                                className="block w-full text-center py-3 px-4 text-white bg-black hover:bg-gray-800 rounded-full font-medium text-sm"
                                 onClick={toggleMenu}
                             >
-                                Contact
+                                Contact Us
                             </Link>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
             </Transition>
         </header>
