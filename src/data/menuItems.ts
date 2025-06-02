@@ -2,12 +2,11 @@ import { IMenuItem } from "@/types";
 
 export const menuItems: IMenuItem[] = [
     {
-        text: 'Tax Services',
-        url: '/tax-services'
-    },
-    {
-        text: 'Real Estate Planning',
-        url: '/real-estate-planning'
+        text: 'Our Services',
+        url: '/#our-services',
+        onClick: () => {
+            document.getElementById('our-services')?.scrollIntoView({ behavior: 'smooth' });
+        }
     },
     {
         text: 'About Us',
@@ -15,6 +14,6 @@ export const menuItems: IMenuItem[] = [
     },
     {
         text: 'Testimonials',
-        url: '/testimonials'
+        url: '/#testimonials'
     }
 ];

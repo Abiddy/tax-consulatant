@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React from 'react';
-import { FaFingerprint } from 'react-icons/fa';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
 import { siteDetails } from '@/data/siteDetails';
@@ -21,16 +20,6 @@ const Footer: React.FC = () => {
                     <p className="mt-3.5 text-foreground-accent">
                         {footerDetails.subheading}
                     </p>
-                </div>
-                <div>
-                    <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul className="text-foreground-accent">
-                        {footerDetails.quickLinks.map(link => (
-                            <li key={link.text} className="mb-2">
-                                <Link href={link.url} className="hover:text-foreground">{link.text}</Link>
-                            </li>
-                        ))}
-                    </ul>
                 </div>
                 <div>
                     <h4 className="text-lg font-semibold mb-4">Contact Us</h4>

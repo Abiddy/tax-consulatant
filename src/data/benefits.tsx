@@ -67,7 +67,7 @@ export const benefits: IBenefit[] = [
                 icon: <FiShield size={26} />
             }
         ],
-        imageSrc: "/images/specialized-tax.webp"
+        imageSrc: "/images/image3.jpg"
     },
     {
         title: "Real Estate Tax Planning",
@@ -89,6 +89,6 @@ export const benefits: IBenefit[] = [
                 icon: <FiDollarSign size={26} />
             }
         ],
-        imageSrc: "/images/real-estate-tax.webp"
+        imageSrc: "/images/image4.jpg"
     }
 ];

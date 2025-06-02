@@ -2,7 +2,7 @@ export const siteDetails = {
     siteName: 'Guardian Tax & Realty',
     siteUrl: 'https://guardiantaxandrealty.com/',
     metadata: {
-        title: 'Gaurdian Tax - Next.js and Tailwind CSS Landing Page Template',
+        title: 'Guardian Tax - Next.js and Tailwind CSS Landing Page Template',
         description: 'Finwise empowers businesses with cutting-edge technology solutions to drive success and efficiency.',
     },
     language: 'en-us',

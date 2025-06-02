@@ -1,6 +1,7 @@
 export interface IMenuItem {
     text: string;
     url: string;
+    onClick?: () => void;
 }
 
 export interface IBenefit {

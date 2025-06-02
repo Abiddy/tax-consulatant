@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { Transition } from '@headlessui/react';
 import { HiOutlineXMark, HiBars3 } from 'react-icons/hi2';
+import { FiPhone } from 'react-icons/fi';
 
 import Container from './Container';
 import { siteDetails } from '@/data/siteDetails';
@@ -17,19 +18,19 @@ const Header: React.FC = () => {
     };
 
     return (
-        <header className="bg-transparent fixed top-0 left-0 right-0 md:absolute z-50 mx-auto w-full">
+        <header className="bg-transparent fixed top-0 left-0 right-0 md:absolute z-50 w-full">
             <Container className="!px-0">
-                <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-2 px-5 md:py-10">
+                <nav className="shadow-md md:shadow-none bg-white md:bg-transparent flex justify-between items-center py-2 px-4 md:px-5 md:py-10">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2">
+                    <Link href="/" className="flex items-center gap-2 min-w-0">
                         <img 
                             src="/images/logo2.png" 
                             alt={`${siteDetails.siteName} Logo`}
                             width={100}
                             height={100}
-                            className="w-auto h-12 pr-5" // This ensures proper scaling while maintaining aspect ratio
+                            className="w-auto h-6 md:h-12 pr-2 md:pr-5" // Smaller height on mobile, larger on desktop
                         />
-                        <span className="manrope text-xl font-semibold text-foreground cursor-pointer">
+                        <span className="manrope text-lg md:text-xl font-semibold text-foreground cursor-pointer truncate">
                             {siteDetails.siteName}
                         </span>
                     </Link>
@@ -47,9 +48,18 @@ const Header: React.FC = () => {
                             </li>
                         ))}
                         <li>
+                            <a 
+                                href="tel:1-888-547-1110" 
+                                className="flex items-center text-foreground hover:text-foreground-accent transition-colors text-base font-medium whitespace-nowrap"
+                            >
+                                <FiPhone className="mr-2" />
+                                1-888-547-1110
+                            </a>
+                        </li>
+                        <li>
                             <Link 
                                 href="/contact" 
-                                className="text-black bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors font-medium"
+                                className="text-black bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors font-medium whitespace-nowrap"
                             >
                                 Contact
                             </Link>
@@ -86,8 +96,8 @@ const Header: React.FC = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
             >
-                <div id="mobile-menu" className="md:hidden bg-white shadow-lg">
-                    <ul className="flex flex-col space-y-4 pt-1 pb-6 px-6">
+                <div id="mobile-menu" className="md:hidden bg-white w-full">
+                    <ul className="flex flex-col space-y-4 pt-1 pb-6 px-4">
                         {menuItems.map(item => (
                             <li key={item.text}>
                                 <Link 
@@ -100,9 +110,19 @@ const Header: React.FC = () => {
                             </li>
                         ))}
                         <li>
+                            <a 
+                                href="tel:1-888-547-1110" 
+                                className="flex items-center text-foreground hover:text-primary py-2 text-base font-medium"
+                                onClick={toggleMenu}
+                            >
+                                <FiPhone className="mr-2" />
+                                1-888-547-1110
+                            </a>
+                        </li>
+                        <li>
                             <Link 
-                                href="/contact" 
-                                className="text-black bg-primary hover:bg-primary-accent px-6 py-3 rounded-full block w-fit font-medium" 
+                                href="/#contact" 
+                                className="text-black bg-primary hover:bg-primary-accent px-6 py-3 rounded-full inline-block font-medium" 
                                 onClick={toggleMenu}
                             >
                                 Contact
