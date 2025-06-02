@@ -46,6 +46,33 @@ function ContactForm() {
           </div>
 
           <div className="relative">
+            <label htmlFor="email" className="block text-lg text-gray-900 mb-2">Email</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              required
+              className="w-full bg-gray-100 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
+              placeholder="your.email@example.com"
+            />
+            <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-sm mt-1" />
+          </div>
+
+          <div className="relative">
+            <label htmlFor="phone" className="block text-lg text-gray-900 mb-2">Phone Number</label>
+            <input
+              id="phone"
+              type="tel"
+              name="phone"
+              required
+              pattern="[0-9]{3}[-. ]?[0-9]{3}[-. ]?[0-9]{4}"
+              className="w-full bg-gray-100 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
+              placeholder="(123) 456-7890"
+            />
+            <ValidationError prefix="Phone" field="phone" errors={state.errors} className="text-red-500 text-sm mt-1" />
+          </div>
+
+          <div className="relative">
             <label htmlFor="service" className="block text-lg text-gray-900 mb-2">Service you need</label>
             <select
               id="service"
