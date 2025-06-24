@@ -5,10 +5,10 @@ import { benefits } from "@/data/benefits";
 import { FiFileText, FiUserCheck, FiBriefcase, FiHome } from 'react-icons/fi';
 
 const CARD_COLORS = [
-    { bg: '#4169E1', text: 'white' },  // Royal Blue
-    { bg: '#E6E6EA', text: '#1F2937' }, // Light Gray
-    { bg: '#1F2937', text: 'white' },  // Dark Gray
-    { bg: '#2563EB', text: 'white' },  // Blue
+    { bg: 'var(--primary)', text: 'var(--primary-accent)' },  // Primary with accent text
+    { bg: 'var(--sidebar)', text: 'var(--primary)' },        // Sidebar with primary text
+    { bg: 'var(--accent)', text: 'var(--primary)' },         // Accent with primary text
+    { bg: 'var(--white, #fff)', text: 'var(--primary)' },    // White with primary text
 ];
 
 const ICONS = {
@@ -51,10 +51,10 @@ const Benefits: React.FC = () => {
 
                                 {/* Main Service */}
                                 <div className="mb-12">
-                                    <h3 className="text-2xl font-bold mb-4 tracking-tight">
+                                    <h3 className="text-2xl font-bold mb-4 tracking-tight text-inherit">
                                         {benefit.title}
                                     </h3>
-                                    <p className="text-lg opacity-90 font-normal leading-relaxed">
+                                    <p className="text-lg opacity-90 font-normal leading-relaxed text-inherit">
                                         {benefit.description}
                                     </p>
                                 </div>
@@ -63,8 +63,8 @@ const Benefits: React.FC = () => {
                                 <div className="space-y-8">
                                     {benefit.bullets.map((bullet, bulletIndex) => (
                                         <div key={bulletIndex}>
-                                            <h4 className="text-xl font-semibold mb-3">{bullet.title}</h4>
-                                            <p className="text-base opacity-90 leading-relaxed">
+                                            <h4 className="text-xl font-semibold mb-3 text-inherit">{bullet.title}</h4>
+                                            <p className="text-base opacity-90 leading-relaxed text-inherit">
                                                 {bullet.description}
                                             </p>
                                         </div>

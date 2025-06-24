@@ -8,6 +8,7 @@ import { HiOutlineXMark, HiBars3, HiChevronDown } from 'react-icons/hi2';
 import Container from './Container';
 import { siteDetails } from '@/data/siteDetails';
 import { menuItems } from '@/data/menuItems';
+import Logo from './Logo';
 
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -22,14 +23,8 @@ const Header: React.FC = () => {
                 <nav className="flex justify-between items-center py-4 px-4 md:px-8">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 min-w-0">
-                        <img 
-                            src="/images/logo2.png" 
-                            alt={`${siteDetails.siteName} Logo`}
-                            width={100}
-                            height={100}
-                            className="w-auto h-8 md:h-10" 
-                        />
-                        <span className=" text-xl md:text-xs font-bold text-gray-900">
+                        <Logo width={40} height={40} className="w-auto h-8 md:h-10" />
+                        <span className="text-xl text-gray-900">
                             {siteDetails.siteName}
                         </span>
                     </Link>

@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
     return (
         <section className="relative pb-10 p-5 pt-20 md:pt-32 overflow-hidden">
             {/* Main Hero Section */}
-            <div className="relative bg-[#FFC043] min-h-[40vh] rounded-[40px] p-10 sm:p-6 lg:px-8">
+            <div className="relative bg-white border border-gray-200 min-h-[40vh] rounded-[40px] p-10 sm:p-6 lg:px-8">
                 <div className="max-w-7xl pt-12 pb-24 md:pb-32">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         {/* Text Content */}
@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-black mb-6 leading-tight tracking-tight">
                                 Expert Tax Solutions for Your Financial Success
                             </h1>
-                            <p className="text-lg md:text-xl text-gray-800 mb-8 max-w-lg font-normal">
+                            <p className="text-lg md:text-xl text-text mb-8 max-w-lg font-normal">
                                 Easy-to-manage tax solutions, designed to improve financial wellness and enhance your peace of mind.
                             </p>
                             <Link 
@@ -30,11 +30,19 @@ const Hero: React.FC = () => {
                                     e.preventDefault();
                                     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                                 }}
-                                className="inline-flex items-center justify-center text-white bg-black hover:bg-gray-800 px-8 py-4 rounded-full transition-all duration-300 font-semibold text-lg"
+                                className="inline-flex items-center justify-center text-primary bg-accent hover:bg-sidebar px-8 py-4 rounded-full transition-all duration-300 font-semibold text-lg"
                             >
                                 Contact Us
                             </Link>
                         </motion.div>
+                        {/* Logo Image */}
+                        <div className="flex justify-center items-center">
+                            <img 
+                                src="/images/heroImage.png" 
+                                alt="Hero Illustration"
+                                className="w-64 h-64 md:w-96 md:h-96 object-cover rounded-3xl border shadow-2xl rotate-[-5deg]" 
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -71,11 +79,11 @@ const Hero: React.FC = () => {
                             transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
                             className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
                         >
-                            <div className="w-12 h-12 bg-[#FFC043] rounded-xl flex items-center justify-center mb-4">
+                            <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-4">
                                 {service.icon}
                             </div>
-                            <h3 className="text-xl font-bold mb-3 text-gray-900">{service.title}</h3>
-                            <p className="text-gray-600 font-normal">{service.description}</p>
+                            <h3 className="text-xl font-bold mb-3 text-primary">{service.title}</h3>
+                            <p className="text-text font-normal">{service.description}</p>
                         </motion.div>
                     ))}
                 </div>

@@ -24,7 +24,7 @@ function ContactForm() {
         <div className="relative w-16 h-16 mx-auto mb-6">
           <div className="absolute inset-0 bg-blue-500 rounded-2xl blur-lg opacity-20"></div>
           <div className="relative bg-white rounded-2xl p-4 shadow-md">
-            <HiOutlineMail className="w-8 h-8 text-blue-500" />
+            <HiOutlineMail className="w-8 h-8 text-primary" />
           </div>
         </div>
         <h2 className="text-3xl font-normal text-gray-900 mb-2">Get in touch</h2>
@@ -85,6 +85,7 @@ function ContactForm() {
               <option value="tax-audit">Tax Audit Support</option>
               <option value="payment-solutions">Payment Solutions</option>
               <option value="real-estate">Real Estate Tax Planning</option>
+              <option value="other">Other</option>
             </select>
             <div className="absolute right-4 top-[46px] pointer-events-none">
               <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -4,13 +4,13 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-  --primary: #FED835;
-  --secondary: #304fff;
+  --foreground: #222222;
+  --primary: #38404A;
+  --secondary: #19E6FF;
 
-  --primary-accent: #e5c230;
-  --foreground-accent: #454545;
-  --hero-background: #F3F3F5;
+  --primary-accent: #19E6FF;
+  --foreground-accent: #38404A;
+  --hero-background: #E6FCFF;
 }
 
 html {
@@ -44,6 +44,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-raleway);
   @apply font-bold;
+  color: var(--primary);
 }
 
 #logos svg {

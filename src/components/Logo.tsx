@@ -1,0 +1,23 @@
+import React from 'react';
+
+const Logo: React.FC<{ width?: number; height?: number; className?: string }> = ({ width = 64, height = 64, className = '' }) => (
+  <svg
+    width={width}
+    height={height}
+    viewBox="0 0 64 64"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <path
+      d="M8 12C8 9.79086 9.79086 8 12 8H52C54.2091 8 56 9.79086 56 12V36C56 49.2548 44.2548 60 32 60C19.7452 60 8 49.2548 8 36V12Z"
+      fill="#19E6FF"
+    />
+    <path
+      d="M22 22C22 19.7909 23.7909 18 26 18H38C40.2091 18 42 19.7909 42 22V32C42 34.2091 40.2091 36 38 36H32V32H38V22H26V36H32V40H26C23.7909 40 22 38.2091 22 36V22Z"
+      fill="#fff"
+    />
+  </svg>
+);
+
+export default Logo; 

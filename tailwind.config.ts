@@ -17,7 +17,9 @@ const config: Config = {
         foreground: "var(--foreground)",
         primary: "var(--primary)",
         secondary: "var(--secondary)",
-
+        accent: "var(--primary-accent)",
+        sidebar: "var(--hero-background)",
+        text: "var(--foreground)",
         "primary-accent": "var(--primary-accent)",
         "foreground-accent": "var(--foreground-accent)",
         "hero-background": "var(--hero-background)",

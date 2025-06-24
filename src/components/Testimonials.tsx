@@ -34,21 +34,21 @@ const Testimonials = () => {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className="flex-none w-[calc(100%-2rem)] sm:w-[400px] snap-center"
                             >
-                                <div className="h-full bg-gray-900 text-white rounded-3xl p-8 flex flex-col">
+                                <div className="h-full bg-primary text-accent rounded-3xl p-8 flex flex-col">
                                     {/* Avatar and Info */}
                                     <div className="flex items-center gap-4 mb-6">
-                                        <div className="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center">
-                                            <FiUser className="w-6 h-6 text-green-500" />
+                                        <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
+                                            <FiUser className="w-6 h-6 text-primary" />
                                         </div>
                                         <div>
-                                            <h4 className="font-semibold text-lg">{testimonial.name}</h4>
-                                            <p className="text-gray-400">{testimonial.role}</p>
+                                            <h4 className="font-semibold text-lg text-accent">{testimonial.name}</h4>
+                                            <p className="text-sidebar">{testimonial.role}</p>
                                         </div>
                                     </div>
 
                                     {/* Quote */}
                                     <blockquote className="flex-grow">
-                                        <p className="text-gray-300 leading-relaxed">
+                                        <p className="text-sidebar leading-relaxed">
                                             {testimonial.message}
                                         </p>
                                     </blockquote>
