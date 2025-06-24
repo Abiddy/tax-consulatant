@@ -4,7 +4,6 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 
 import { siteDetails } from '@/data/siteDetails';
 import { footerDetails } from '@/data/footer';
-import { getPlatformIconByName } from '@/utils';
 import Logo from './Logo';
 
 const Footer: React.FC = () => {
