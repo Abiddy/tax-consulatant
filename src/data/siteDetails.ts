@@ -2,8 +2,8 @@ export const siteDetails = {
     siteName: 'Guardian Tax Resolution',
     siteUrl: 'https://guardiantaxandrealty.com/',
     metadata: {
-        title: 'Guardian Tax Resolution - Next.js and Tailwind CSS Landing Page Template',
-        description: 'Finwise empowers businesses with cutting-edge technology solutions to drive success and efficiency.',
+        title: 'Guardian Tax Resolution - All your tax needs in one place',
+        description: 'Guardian Tax Resolution is a tax resolution company that helps you with all your tax needs.',
     },
     language: 'en-us',
     locale: 'en-US',
