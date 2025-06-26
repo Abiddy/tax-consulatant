@@ -24,16 +24,25 @@ const Hero: React.FC = () => {
                             <p className="text-lg md:text-xl text-text mb-8 max-w-lg font-normal">
                                 Easy-to-manage tax solutions, designed to improve financial wellness and enhance your peace of mind.
                             </p>
-                            <Link 
-                                href="#contact"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                                }}
-                                className="inline-flex items-center justify-center text-primary bg-accent hover:bg-sidebar px-8 py-4 rounded-full transition-all duration-300 font-semibold text-lg"
-                            >
-                                Contact Us
-                            </Link>
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <Link 
+                                    href="#contact"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                                    }}
+                                    className="inline-flex items-center justify-center text-primary bg-accent hover:bg-sidebar px-8 py-4 rounded-full transition-all duration-300 font-semibold text-lg"
+                                >
+                                    Contact Us
+                                </Link>
+                                <a
+                                    href="tel:3109784650"
+                                    className="inline-flex items-center justify-center text-primary bg-accent hover:bg-sidebar px-8 py-4 rounded-full transition-all duration-300 font-semibold text-lg"
+                                    style={{ textDecoration: 'none' }}
+                                >
+                                    310-978-4650
+                                </a>
+                            </div>
                         </motion.div>
                         {/* Logo Image */}
                         <div className="flex justify-center items-center">

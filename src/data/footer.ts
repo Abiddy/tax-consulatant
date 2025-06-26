@@ -27,7 +27,7 @@ export const footerDetails: {
         }
     ],
     email: 'jake@guardiantaxresolution.com',
-    telephone: '1-888-547-1110',
+    telephone: '310-978-4650',
     socials: {
         // github: 'https://github.com',
         // x: 'https://twitter.com/x',
